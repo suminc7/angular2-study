@@ -4,9 +4,13 @@ import {AuthorsComponent} from './authors.component';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>My First Angular 2 App</h1>
+    template: `<h1>{{ title }}</h1>
+        <h1 [textContent]="title"></h1>
                 <courses></courses>
                 <authors></authors>`,
     directives: [CoursesComponent, AuthorsComponent]
 })
-export class AppComponent {}
+export class AppComponent {
+    title = "Angular App";
+    imgUrl = "http://www.naver.com/";
+}
