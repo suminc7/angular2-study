@@ -1,17 +1,22 @@
 import {Component} from 'angular2/core';
-import {LikeComponent} from "./like.component";
+import {TweetComponent} from "./tweet.component";
+import {TweetService} from "./tweet.service";
 
 @Component({
     selector: 'my-app',
     template: `
-        <like [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></like>
+        <div *ngFor="#tweet of tweets">
+            <tweet [data]="tweet"></tweet>
+        </div>
     `,
-    directives: [LikeComponent]
+    directives: [TweetComponent],
+    providers: [TweetService]
 })
 export class AppComponent {
 
-    tweet = {
-        totalLikes: 10,
-        iLike: false
+    tweets: any[];
+
+    constructor(tweetService: TweetService){
+        this.tweets = tweetService.getTweets();
     }
 }

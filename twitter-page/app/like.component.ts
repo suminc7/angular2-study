@@ -13,6 +13,7 @@ import {Component, Input} from 'angular2/core';
     styles: [`
         .glyphicon-heart {
             color: #ccc;
+            cursor: pointer;
         }
         .highlighted {
             color: deeppink;
