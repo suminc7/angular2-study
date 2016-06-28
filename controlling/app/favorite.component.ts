@@ -1,8 +1,10 @@
 import {Component} from 'angular2/core';
+import {ToggleButton} from './toggle.button';
 
 @Component({
     selector: 'my-app',
     template: `
+        <toggle-button></toggle-button>
         <i
             class="glyphicon"
             [ngClass]="{
@@ -12,7 +14,8 @@ import {Component} from 'angular2/core';
             (click)="onClick()"
         ></i>
         
-    `
+    `,
+    directives: [ToggleButton]
 })
 export class AppComponent {
 
