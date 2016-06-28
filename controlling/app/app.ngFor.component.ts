@@ -3,15 +3,18 @@ import {Component} from 'angular2/core';
 @Component({
     selector: 'my-app',
     template: `
-        <div [hidden]="courses.length == 0">
-            List of courses
-        </div>
-        <div [hidden]="courses.length > 0">
-            You don't have any courses yet.    
-        </div>
+        <ul>
+            <li *ngFor="#course of courses, #i = index">
+                {{ i + 1 }} - {{ course }}
+            </li>
+            
+            <template ngFor [ngForOf]="courses" #course #i=index>
+                <li> {{ i + 1 }} - {{ course }}</li>
+            </template>
+        </ul>
     `
 })
 export class AppComponent {
 
-    courses = [];
+    courses = ['Course 1', 'Course 2', 'Course 3'];
 }
