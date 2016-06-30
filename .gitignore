@@ -1,5 +1,5 @@
 
 node_modules
 npm-debug.log
-controlling/app/*.js
-controlling/app/*.js.map
+/**/*.js
+/**/*.js.map
