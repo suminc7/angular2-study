@@ -37,26 +37,26 @@
 
 ## Creating Custom Pipes
 ```typescript
-import	{Pipe,	PipeTransform}	from	‘angular2/core’;	
-@Pipe({	name:	‘summary’	})
+import {Pipe, PipeTransform} from ‘angular2/core’;	
+@Pipe({	name: ‘summary’	})
 export	class	SummaryPipe	implements	PipeTransform	{
-					transform(value:	string,	args:	string[])	{
-					}
+    transform(value:	string,	args:	string[])	{
+    }
 }
 ```
 
 #### In the host component
 ```typescript
 @Component({
-				pipes:	[SummaryPipe]
+    pipes: [SummaryPipe]
 })
 ```
 
 ## Applying multiple classes dynamically
 ```typescript
-<i	[ngClass]=“{
-				active:	isActive,
-				disabled:	isDisabled
+<i [ngClass]=“{
+    active: isActive,
+    disabled: isDisabled
 }”></i>	
 ```
 
@@ -64,9 +64,9 @@ export	class	SummaryPipe	implements	PipeTransform	{
 ## Applying multiple styles dynamically
 ```typescript
 <button	
-				[ngStyle]=“{
-								backgroundColor:	canSave	?	‘blue’:	‘gray’,
-								color:	canSave	?	‘white’	:	‘black’
+    [ngStyle]=“{
+    backgroundColor:	canSave	?	‘blue’:	‘gray’,
+    color:	canSave	?	‘white’	:	‘black’
 }”></button>
 ```
 
