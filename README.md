@@ -10,7 +10,7 @@
 - Creating Custom Pipes
 - ngClass
 
-## Showing / hiding elements
+#### Showing / hiding elements
 ```typescript
 <div [hidden]="courses.length == 0"></div>	
 <div *ngIf="courses.length	> 0"></div>	
@@ -24,7 +24,7 @@
 </div>	
 ```
 
-## Pipes
+#### Pipes
 ```typescript
 {{	course.title	|	uppercase	}}	->	ANGULAR	COURSE
 {{	course.students	|	number	}}	->	1,234
@@ -35,7 +35,7 @@
 ```
 
 
-## Creating Custom Pipes
+#### Creating Custom Pipes
 ```typescript
 import {Pipe, PipeTransform} from ‘angular2/core’;	
 @Pipe({	name: ‘summary’	})
@@ -45,14 +45,14 @@ export	class	SummaryPipe	implements	PipeTransform	{
 }
 ```
 
-#### In the host component
+In the host component
 ```typescript
 @Component({
     pipes: [SummaryPipe]
 })
 ```
 
-## Applying multiple classes dynamically
+#### Applying multiple classes dynamically
 ```typescript
 <i [ngClass]=“{
     active: isActive,
@@ -61,7 +61,7 @@ export	class	SummaryPipe	implements	PipeTransform	{
 ```
 
 
-## Applying multiple styles dynamically
+#### Applying multiple styles dynamically
 ```typescript
 <button	
     [ngStyle]=“{
@@ -70,12 +70,12 @@ export	class	SummaryPipe	implements	PipeTransform	{
 }”></button>
 ```
 
-## Elvis operator
+#### Elvis operator
 ```typescript
 {{	task.assignee?.role?.name	}}
 ```
 
-## Inserting content from the outside
+#### Inserting content from the outside
 ```typescript
 <ng-content></ng-content>	
 Multiple content placeholders
