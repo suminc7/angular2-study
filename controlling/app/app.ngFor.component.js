@@ -20,12 +20,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.courses = [];
+                    this.courses = ['Course 1', 'Course 2', 'Course 3'];
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <div [hidden]=\"courses.length == 0\">\n            List of courses\n        </div>\n        <div [hidden]=\"courses.length > 0\">\n            You don't have any courses yet.    \n        </div>\n    "
+                        template: "\n        <ul>\n            <li *ngFor=\"#course of courses, #i = index\">\n                {{ i + 1 }} - {{ course }}\n            </li>\n            \n            <template ngFor [ngForOf]=\"courses\" #course #i=index>\n                <li> {{ i + 1 }} - {{ course }}</li>\n            </template>\n        </ul>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
